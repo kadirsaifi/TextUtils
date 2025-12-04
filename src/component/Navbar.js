@@ -51,14 +51,9 @@ function Navbar(props) {
     </div>
   );
 }
+Navbar.propTypes={
+    title:PropTypes.string.isRequired
+
+}
 
 export default Navbar;
-Navbar.propTypes={
-    title: PropTypes.string.isRequired,
-    menu:PropTypes.string.isRequired
-}
-
-Navbar.defaultProps={
-    title:'SetTitle',
-    menu:'Set Menu'
-}
