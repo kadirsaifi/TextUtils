@@ -17,7 +17,8 @@ export default function TextForm(props) {
 
     const [text, setText]= useState("Enter Text Here!")
   return (
-    <div>
+    <>
+    <div className='container'>
         <h1>{props.headding}</h1>
         <div className="mb-3">
             <textarea className="form-control" value={text} onChange={handelChnageEvent} id="myBox" rows="8"></textarea>
@@ -25,5 +26,14 @@ export default function TextForm(props) {
         <button className='btn btn-primary' onClick={HandelUpperCase}>Click Upper Case</button>
         <button className='btn btn-primary mx-3' onClick={HandelLowerCase}>Click Lower Case</button>
     </div>
+    <div className="container my-4">
+        <h1>Your Text Summary</h1>
+        <p>{text.split(" ").length} words and {text.length} characters</p>
+
+        <p>{0.008 * text.split(" ").length} Minutes</p>
+        <h3>Preview</h3>
+        <p>{text}</p>
+    </div>
+    </>
   )
 }
