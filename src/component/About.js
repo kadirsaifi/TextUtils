@@ -9,7 +9,7 @@ export default function About() {
   const [btnText, setBtnText]=useState("Enable Dark Mode")
 
   const EnableDarkMode=()=>{
-    if(colorDark.color=='white'){
+    if(colorDark.color ==='white'){
         setDarkColor({
             color:'black',
             backgroundColor:'white'
@@ -25,7 +25,7 @@ export default function About() {
     }
   }
   return (
-    <div className="container" style={colorDark}>
+    <div className="container my-3" style={colorDark}>
       <h1>About-Us</h1>
       <div className="accordion" id="accordionExample">
         <div className="accordion-item mx-3">
