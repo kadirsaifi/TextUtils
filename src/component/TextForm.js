@@ -17,9 +17,18 @@ export default function TextForm(props) {
     let newText ='';
     setText(newText);
   };
-  const handelSentence=()=>{
-
+  const handelCopy=()=>{
+    var textcopy = document.getElementById("myBox");
+    textcopy.select();
+    navigator.clipboard.writeText(textcopy.value);
   };
+  const handelExtraSpace=()=>{
+    let newText = text.split(/[ ]+/);
+    setText(newText.join(" "))
+  }
+//   const handelSentence=()=>{
+//     let newText = text
+//   };
 
   const [text, setText] = useState("Enter Text Here!");
   return (
@@ -42,7 +51,8 @@ export default function TextForm(props) {
           Click Lower Case
         </button>
         <button className="btn btn-primary" onClick={handelClear}>Clear</button>
-        <button className="btn btn-primary mx-3" onClick={handelSentence}>Sentence case</button>
+        <button className="btn btn-primary mx-3" onClick={handelCopy} >Copy</button>
+        <button className="btn btn-primary mx-3" onClick={handelExtraSpace} >Remove Extra Spaces</button>
       </div>
       <div className="container my-4">
         <h1>Your Text Summary</h1>
