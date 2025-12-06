@@ -33,13 +33,13 @@ export default function TextForm(props) {
   const [text, setText] = useState("Enter Text Here!");
   return (
     <>
-      <div className="container">
+      <div className="container my-3">
         <h1>{props.headding}</h1>
         <div className="mb-3">
           <textarea
             className="form-control"
             value={text}
-            onChange={handelChnageEvent}
+            onChange={handelChnageEvent} style={{backgroundColor: props.mode==='dark'?'#1B263B':'white', color:props.mode==='dark'?'white':'black'}}
             id="myBox"
             rows="8"
           ></textarea>
@@ -51,8 +51,8 @@ export default function TextForm(props) {
           Click Lower Case
         </button>
         <button className="btn btn-primary" onClick={handelClear}>Clear</button>
-        <button className="btn btn-primary mx-3" onClick={handelCopy} >Copy</button>
-        <button className="btn btn-primary mx-3" onClick={handelExtraSpace} >Remove Extra Spaces</button>
+        <button className="btn btn-primary my-3 mx-3" onClick={handelCopy} >Copy</button>
+        <button className="btn btn-primary" onClick={handelExtraSpace} >Remove Extra Spaces</button>
       </div>
       <div className="container my-4">
         <h1>Your Text Summary</h1>
