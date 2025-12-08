@@ -19,18 +19,17 @@ function App() {
   }
 
 const toggleMode = (cls) => {
-  console.log(cls)
   removeBodyClass();
   document.body.classList.add('bg-'+cls )
-  if (mode === "light") {
-    setMode("dark");
-    document.body.style.backgroundColor = "#1B263B";  // or any dark color
-    document.body.style.color="white"
-  } else {
-    setMode("light");
-    document.body.style.backgroundColor = "white";  // or any light color
-    document.body.style.color="black"
-  }
+  // if (mode === "light") {
+  //   setMode("dark");
+  //   document.body.style.backgroundColor = "#1B263B";  // or any dark color
+  //   document.body.style.color="white"
+  // } else {
+  //   setMode("light");
+  //   document.body.style.backgroundColor = "white";  // or any light color
+  //   document.body.style.color="black"
+  // }
 };
 
 
