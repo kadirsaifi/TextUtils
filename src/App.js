@@ -8,8 +8,20 @@ import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
 function App() {
 
   const [mode, setMode] = useState("light");
+  const removeBodyClass =()=>{
+    document.body.classList.remove('bg-light')
+    document.body.classList.remove('bg-dark')
+    document.body.classList.remove('bg-primary')
+    document.body.classList.remove('bg-success')
+    document.body.classList.remove('bg-warning')
+    document.body.classList.remove('bg-danger')
 
-const toggleMode = () => {
+  }
+
+const toggleMode = (cls) => {
+  console.log(cls)
+  removeBodyClass();
+  document.body.classList.add('bg-'+cls )
   if (mode === "light") {
     setMode("dark");
     document.body.style.backgroundColor = "#1B263B";  // or any dark color
@@ -31,8 +43,6 @@ const toggleMode = () => {
         <Route path='/about' element={<About/>}></Route>
       </Routes>
      </Router>
-  
-     
     </div>
   );
 }

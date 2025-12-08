@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 function Navbar(props) {
+
   return (
     <div>
       <nav className={`navbar navbar-expand-lg navbar-${props.mode}`}style={{ backgroundColor: props.mode === "light" ? "white" : "#0A3D62" }} >
@@ -34,6 +35,10 @@ function Navbar(props) {
                 </Link>
               </li>
             </ul>
+            <div className="bg-primary rounded mx-2" onClick={()=>{props.toggleMode('primary')}} style={{height:'30px', width:'30px'}}></div>
+            <div className="bg-success rounded mx-2" onClick={()=>{props.toggleMode('success')}} style={{height:'30px', width:'30px'}}></div>
+            <div className="bg-danger rounded mx-2"  onClick={()=>{props.toggleMode('danger')}} style={{height:'30px', width:'30px'}}></div>
+            <div className="bg-warning rounded mx-2" onClick={()=>{props.toggleMode('warning')}} style={{height:'30px', width:'30px'}}></div>
             {/* <form className="d-flex" role="search">
               <input
                 className="form-control me-2"
@@ -50,7 +55,7 @@ function Navbar(props) {
                 className="form-check-input"
                 type="checkbox"
                 role="switch"
-                id="switchCheckDefault" onClick={props.toggleMode} 
+                id="switchCheckDefault" onClick={()=>{props.toggleMode(null)} }
               />
               <label className="form-check-label" >
                Enable Dark Mode
