@@ -13,35 +13,24 @@ export default function TextForm(props) {
     let newText = text.toLowerCase();
     setText(newText);
   };
-  const handelClear = () => {
-    let newText = "";
+  const handelClear=()=>{
+    let newText ='';
     setText(newText);
   };
-  const handelCopy = () => {
+  const handelCopy=()=>{
     var textcopy = document.getElementById("myBox");
     textcopy.select();
     navigator.clipboard.writeText(textcopy.value);
   };
-  const handelExtraSpace = () => {
+  const handelExtraSpace=()=>{
     let newText = text.split(/[ ]+/);
-    setText(newText.join(" "));
-  };
-  const bootstrapColors = {
-    primary: "#0d6efd",
-    secondary: "#6c757d",
-    success: "#198754",
-    danger: "#dc3545",
-    warning: "#ffc107",
-    info: "#0dcaf0",
-    light: "#f8f9fa",
-    dark: "#212529",
-  };
-  //   const handelSentence=()=>{
-  //     let newText = text
-  //   };
+    setText(newText.join(" "))
+  }
+//   const handelSentence=()=>{
+//     let newText = text
+//   };
 
   const [text, setText] = useState("Enter Text Here!");
-
   return (
     <>
       <div className="container my-3">
@@ -50,10 +39,7 @@ export default function TextForm(props) {
           <textarea
             className="form-control"
             value={text}
-            onChange={handelChnageEvent}
-            style={{
-              backgroundColor: bootstrapColors[props.mode] 
-            }}
+            onChange={handelChnageEvent} style={{backgroundColor: props.mode==='dark'?'#1B263B':'white', color:props.mode==='dark'?'white':'black'}}
             id="myBox"
             rows="8"
           ></textarea>
@@ -64,15 +50,9 @@ export default function TextForm(props) {
         <button className="btn btn-primary mx-3" onClick={HandelLowerCase}>
           Click Lower Case
         </button>
-        <button className="btn btn-primary" onClick={handelClear}>
-          Clear
-        </button>
-        <button className="btn btn-primary my-3 mx-3" onClick={handelCopy}>
-          Copy
-        </button>
-        <button className="btn btn-primary" onClick={handelExtraSpace}>
-          Remove Extra Spaces
-        </button>
+        <button className="btn btn-primary" onClick={handelClear}>Clear</button>
+        <button className="btn btn-primary my-3 mx-3" onClick={handelCopy} >Copy</button>
+        <button className="btn btn-primary" onClick={handelExtraSpace} >Remove Extra Spaces</button>
       </div>
       <div className="container my-4">
         <h1>Your Text Summary</h1>
