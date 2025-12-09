@@ -7,7 +7,7 @@ import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
 
 function App() {
 
-  const [mode, setMode] = useState("light");
+  const [mode, setMode] = useState("dark");
   const removeBodyClass =()=>{
     document.body.classList.remove('bg-light')
     document.body.classList.remove('bg-dark')
@@ -31,8 +31,6 @@ const toggleMode = (cls) => {
   //   document.body.style.color="black"
   // }
 };
-
-
   return (
     <div className="App">
      <Router>
