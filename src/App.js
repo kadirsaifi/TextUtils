@@ -27,7 +27,7 @@ const toggleMode = () => {
      <Router>
       <Navbar title="TextUtils" menu="Home" mode={mode} toggleMode={toggleMode}/>
       <Routes>
-        <Route path='/' element={<TextForm headding="Enter the text here" mode={mode}/>}></Route>
+        <Route path='/' element={<TextForm headding="Enter your text here !" mode={mode}/>}></Route>
         <Route path='/about' element={<About/>}></Route>
       </Routes>
      </Router>
