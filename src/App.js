@@ -25,6 +25,7 @@ const toggleMode = () => {
   return (
     <div className="App">
      <Router>
+      {/* test for */}
       <Navbar title="TextUtils" menu="Home" mode={mode} toggleMode={toggleMode}/>
       <Routes>
         <Route path='/' element={<TextForm headding="Enter your text here !" mode={mode}/>}></Route>
